@@ -2,6 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 # global variables
 
 
@@ -12,22 +13,78 @@ menu = [
 @app.route("/")
 def homepage():
   """The main page"""
-  title = "Quinta"
-  image1 = "https://cdn.glitch.com/8c2f7a3d-e74c-4f36-8d5e-089c50dcc752%2FIS_tech_class_group.jpg?v=1568692442522"
+  
+  title = "PIL Python Image Library"
+  
+  subtitle = "Elaborate image with Python"
+  
   posts = [
     
-    {"title" : "Il Bilancio",
-      "body" : "Il bilancio e' formato da tre documenti: Stato patrimoniale, Conto economico e Nota integrativa."},
+    {"title" : "What is PIL",
+      "body" : [
+                "PIL is a powerful module for Python that allows you to create and elaborate images by conding in Python. You can do almost anything, building the perfect image tools for your needs.",
+                " In this tutorial you will be guided through the most interesting tools you can use with a lot of code examples, to avoid being stuck with theory."]},
+    
+    {"title" : "Install",
+    "body" : ["First you need to install pil's fork pillow:",
+              "pip install pillow"]},
+ 
+    {"title" : "Import",
+    "body" : ["from PIL import Image"]},
+    
+    {"title" : "Create",
+    "body" : ["img = Image.new('RBG', (600,400), 'yellow')"]},
+    
+    {"title" : "Open",
+     "body" : ["img = Image.open('existing.png')"]},
+    
+    {"title" : "Save",
+     "body" : ["img.save('myimage.png')"]},
+    
+    {"title" : "Show",
+     "body" : ["img.show()"]},
+    
+    {"title" : "Resize",
+     "body" : ["img.resize((100,100), Image.ANTIALIAS)"]},
+    
+    {"title" : "Blur (from PIL import ImageFilter)",
+     "body" : ["img.filter(ImageFilter.BLUR)"]},
+    
+    {"title": "A smooth blur",
+    "body" : [
+      "This is much softer than BLUR",
+      "i = i.filter(ImageFilter.SMOOTH)"]
+    },
+  
+    {"title" : "Blend 2 images together",
+     "body" : ["img = Image.blend(Image.open('image1.png','image2.png', 0.5))"]},
+    
+    {"title" : "Pasting an image on another",
+     "body" : ["img.paste((0,0),'image2.png')"]},
+    
+    {"title" : "Write text on an image (ImageDraw)",
+     "body" : ["draw = ImageDraw.Draw(img)",
+               "draw.text(0,0,'This text goes on top of the image')"]},
+    
+    {
+      
+      "title" : "Thumbnail",
+      "body" : ["im.thumbnail((128, 128), Image.ANTIALIAS)"]
+      
+    }
+    
+
+    # {"title" : "", "body" : ""},
     
 
   ]
   showinfo = 1
   return render_template("index.html",
                          menu = menu,
-                         title=title,
-                         image1=image1,
-                         posts=posts,
-                         showinfo=showinfo)
+                         title = title,
+                         subtitle = subtitle,
+                         posts = posts,
+                         showinfo = showinfo)
 
 @app.route("/info")
 def info():
@@ -38,7 +95,7 @@ def info():
   { 
     "title" : "Info about me",
     "body" : 
-    "This is a blog for the 5ce students.",
+    "Hi. I'm Giovanni Python. Subscribe to my channel on Youtube if you want more tutorial like this.",
   }
     
   ]

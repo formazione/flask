@@ -1,26 +1,31 @@
 {% extends 'template.html' %}
 
 {% block page %}
-
 <div class="jumbotron">
   
     <h1>{{ title }}</h1>
 </div>
-    <img src="{{ image1 }}">
-   {% for post in posts %}
-    
-     <h3>{{ post.title }}</h3>
-     <p>{{ post.body }}</p>
   
-   {% endfor %}
-    
-    
+<div class="container">
+  
+   {% for post in posts %}
+      
+      <div class="row">
+     
+         <div class="col-md-4"><h3>{{ post.title }}</h3></div>
 
-<!-- View Source Button -->
-<!-- Project Helper -->
-<!-- ✂️ Copy this script to your project's view: -->
-  <script src="https://button.glitch.me/button.js"></script>
-<!-- ✂️ Copy this to wherever you want the button to show: -->
-  <div class="glitchButton" align="right"></div>
+         <div class="col-md-8">
+             {% for p in post.body %}
+                   <p>{{ p }}</p>
+              {% endfor %}
+         </div>
+
+      </div>
+     
+  {% endfor %}
+    
+</div>  
+
+
 
 {% endblock %}
