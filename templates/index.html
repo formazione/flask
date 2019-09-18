@@ -1,11 +1,12 @@
 {% extends 'template.html' %}
 
 {% block page %}
+
 <div class="jumbotron">
   
     <h1>{{ title }}</h1>
 </div>
-    
+    <img src="{{ image1 }}">
    {% for post in posts %}
     
      <h3>{{ post.title }}</h3>
