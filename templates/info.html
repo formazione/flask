@@ -3,25 +3,17 @@
 {% block page %}
 
 <div class="jumbotron">
-      <h1>
-        {{ title }}
-      </h1>
-      </div>
-
-
-<div class="row">
   
-  <div class="col-md-9">
-    
-         {% for post in posts %}
-
-           <h3>{{ post.title }}</h3>
-           {{ post.body }}<br>
-
-         {% endfor %}
-  </div>
-    
-  
-      {% endblock %}
-
+<h1>
+  {{ title }}
+</h1>
 </div>
+  
+   {% for post in posts %}
+    
+     <h3>{{ post.title }}</h3>
+     <p>{{ post.body }}</p>
+  
+   {% endfor %}
+<a href="/">Home</a>
+{% endblock %}
