@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask import Markup
-
+import re
 
 app = Flask(__name__)
 
@@ -13,10 +13,25 @@ menu = [
 ]
 
 def markup(posts):
+  # bold instead of asteriscs
+  for p in posts:
+    # print(p)
+    for k in p:
+      p[k] = p[k].split(" ")
+      print(p[k])
+      for n,w in enumerate(p[k]):
+        if "*" in w:
+          w = w.replace("*","")
+          p[k][n] = "<b>"+w+"</b>"
+      p[k] = " ".join(p[k])
+  
+  # Markup everything
   for post in posts:
     for k in post:
       post[k] = Markup(post[k])
 
+  
+      
 @app.route("/")
 def homepage():
   """The main page"""
@@ -28,8 +43,8 @@ def homepage():
   posts = [
     
     {"title" : "What is PIL",
-      "body" :  """PIL is a powerful module for Python that allows you to create and elaborate images by conding in Python. You can do almost anything, building the perfect image tools for your needs.
-In this tutorial you will be guided through the most interesting tools you can use with a lot of code examples, to avoid being stuck with theory."""},
+      "body" :  """*PIL is a powerful module for *Python that allows you to create and elaborate *images by conding in Python. You can do almost anything, building the perfect image tools for your needs.
+We will take a fast look at the main functions of this very useful module."""},
     
     {"title" : "Install",
     "body" : """First you need to install pil's fork pillow:
@@ -84,7 +99,22 @@ i = i.""filter(ImageFilter.SMOOTH)"""
     
 
   ]
-  markup(posts)
+
+  
+  for p in posts:
+    # print(p)
+    for k in p:
+      p[k] = p[k].split(" ")
+      print(p[k])
+      for n,w in enumerate(p[k]):
+        if "*" in w:
+          w = w.replace("*","")
+          p[k][n] = "<b>"+w+"</b>"
+      p[k] = " ".join(p[k])      
+    
+  
+  markup(posts) # substitute * and add Markup
+  
   showinfo = 1
   return render_template("index.html",
                          menu = menu,
