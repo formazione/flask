@@ -4,22 +4,16 @@
 <div class="jumbotron">
   
     <h1>{{ title }}</h1>
+  <a href="https://pythonprogramming.altervista.org">Powered by Pythonprogramming</a>
 </div>
   
 <div class="container">
-  <center>
-    <img src="{{ image1 }}" width="100%" />
-  </center>
-  {% for post in posts %}
+  
+   {% for post in posts %} <!-- iterate all posts keys/values -->
       
       <div class="row">
-     <!--                            TITOLO  CAPITOLO     -->
-         <div class="col-md-4"><h3>{{ post.title }}</h3></div>
-  <!--                   PARAGRAFI          -->
-         <div class="col-md-8">     
-                  <p>{{ post.body }}</p>       
-         </div>
-
+         <div class="col-md-4"> <h3>{{ post.title }}</h3> </div> <!-- colonna titolo -->
+         <div class="col-md-8"> <p>{{ post.body }}</p> </div> <!-- colonna paragrafo -->
       </div>
      
   {% endfor %}
