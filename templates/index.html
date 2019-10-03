@@ -4,22 +4,22 @@
 <div class="jumbotron">
   
     <h1>{{ title }}</h1>
+  <a href="https://pythonprogramming.altervista.org">Powered by Pythonprogramming.altervista.org</a>
 </div>
-    
-   {% for post in posts %}
-    
-     <h3>{{ post.title }}</h3>
-     <p>{{ post.body }}</p>
   
-   {% endfor %}
+<div class="container">
+  
+   {% for post in posts %} <!-- iterate all posts keys/values -->
+      
+      <div class="row">
+         <div class="col-md-4"> <h3>{{ post.title }}</h3> </div> <!-- colonna titolo -->
+         <div class="col-md-8"> <p>{{ post.body }}</p> </div> <!-- colonna paragrafo -->
+      </div>
+     
+  {% endfor %}
     
-    
+</div>  
 
-<!-- View Source Button -->
-<!-- Project Helper -->
-<!-- ✂️ Copy this script to your project's view: -->
-  <script src="https://button.glitch.me/button.js"></script>
-<!-- ✂️ Copy this to wherever you want the button to show: -->
-  <div class="glitchButton" align="right"></div>
+
 
 {% endblock %}
