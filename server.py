@@ -94,7 +94,7 @@ def homepage():
   posts = [
     
     {"title" : "What is PIL",
-      "body" :  """*PIL is a powerful module for *Python that allows you to create and elaborate *images by conding in Python. You can do almost anything, building the perfect image tools for your needs.
+      "body" :  """*PIL is a powerful module for *Python that allows you to create and elaborate *images coding in Python. You can do almost anything, building the perfect image tools for your needs.
 We will take a fast look at the main functions of this very useful module."""},
     
     {"title" : "Install",
@@ -224,7 +224,13 @@ def info():
   { 
     "title" : "Info about me",
     "body" : 
-    "Welcome in our school!",
+    Markup("""I got the python blog <a href='https://pythonprogramming.altervista.org'>https://pythonprogramming.altervista.org</a>
+    <br>
+    <img src='https://i1.wp.com/pythonprogramming.altervista.org/wp-content/uploads/2019/06/cropped-altervista2.png?fit=156%2C55&ssl=1'
+/>
+<br>
+I have also a <a href="https://www.youtube.com/channel/UCzbxq5e9gLiY-je2-br1rvg?view_as=subscriber">Youtube channel with hundreds of videos about Python</a> with a lot of examples and live coding videos.
+"""),
   }
     
   ]
