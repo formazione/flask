@@ -87,107 +87,48 @@ def markup(posts):
 def homepage():
   """The main page"""
   
-  title = "PIL Python Image Library"
+  title = "Appunti di Economia aziendale"
   
-  subtitle = "Elaborate image with Python"
+  subtitle = "Appunti quotidiani"
   
   posts = [
     
-    {"title" : "What is PIL",
-      "body" :  """*PIL is a powerful module for *Python that allows you to create and elaborate *images coding in Python. You can do almost anything, building the perfect image tools for your needs.
-We will take a fast look at the main functions of this very useful module."""},
-    
-    {"title" : "Install",
-    "body" : """First you need to install pil's fork pillow:
-pip install pillow
-<img src="https://cdn.glitch.com/8f79309f-0a88-41bb-bfd9-ccac7007a188%2Fpip_install_pil.PNG?v=1569514131173" />
-"""},
- 
-    {"title" : "Import",
-    "body" : """
-    The first thing you need to import is the Class Image
-    <br>
->>> from PIL import Image"""},
-    
-    # CREATE A NEW IMAGE
-    
-    {"title" : "Create",
-    "body" : """>>> img = Image.new('RBG', (200,200), 'yellow')
-<br><br>
-This will *create a yellow square image of 200 px of *width and 200 px of *height. *RGB is for Red, Green and Blue, aka the image is in color. If you want to use *transparency you have to use *RGBA instead of RGB.
-"""},
-    
-    {"title" : "Open",
-     "body" : """>>> img = Image.open('existing.png')"""},
-    
-    {"title" : "Save",
-     "body" : ">>> img.save('myimage.png')"},
-    
-    {"title" : "Show",
-     "body" : ">>> img.show()"},
-    
-    {"title" : "Resize",
-     "body" : """>>> img.resize((100,100), Image.ANTIALIAS)"""},
-    
-    {"title" : "Filters for the images",
-     "body" : """
->>> img.filter(ImageFilter.BLUR)
-<br><br>
-There's a much smoother blur called SMOOTH
-<br>
->>> i = i.filter(ImageFilter.SMOOTH )
-<br><br>
-You can then create a 'contour' effect
-<br>
->>> i = i.filter( ImageFilter.CONTOUR )
-"""},
     
 
-  
-    {"title" : "Blend 2 images together",
-     "body" : """>>> img = Image.blend(Image.open('image1.png','image2.png', 0.5) )"""},
-    
-    {"title" : "Pasting an image on another",
-     "body" : """>>> img.paste((0,0),'image2.png')"""},
-    
-    {"title" : "Write text on an image (ImageDraw)",
-     "body" : """
->>> draw = ImageDraw.Draw(img)
-<br>
->>> draw.text(0,0,'This text goes on top of the image')"""},
-    
+    {"title" : "Ruolo dell'Italia nel turismo (classe 5a)",
+     "body" : "Assodato il fatto che il turismo alimenta il 10% del PIL, che risente meno della crisi rispetto ad altri settori dell'economia di un Paese e che l'Italia è al quinto posto per arrivi internazionali, bisogna capire che per intercettare i turisti anche in futuro si devono comprendere le nuove tendenze quali il progressivo invecchiamento della papolazione, i nuovi stili di vita (lavoro più flessibile, periodi di vacanza più brevi e distribuiti nel tempo, ricera di esperienze diverse da quelle del turismo di massa, bisogno di conoscere nuove culture. Una parte dei turisti utilizza Internet ed è più indipendente nella composizione della propria vacanza. Le nuove tecnologie pongono nuove sfide, così come l'aumentare del reddito dei Paesi in via di sviluppo). La Russia, l'India, la Cina, sono aree che rappresenteranno una fetta sempre maggiore del mercato turistico italiano (e mondiale). L'offerta, quindi, deve adeguarsi ai cambiamenti della domanda."},
     {
-      
-      "title" : "Thumbnail",
-      "body" : """>>> im.thumbnail((128, 128), Image.ANTIALIAS)"""
+      "title" : "Analisi SWOT",
+      "body" : "Un metodo per analizzare le opportunità del mercato è l'analisi SWOT che analizza i punti di forza e debolezza della sua stessa organizzazione e le opportunità e le minacce derivanti dal mercato e dalle scelte politiche. Per questo le informazioni (abbiamo parlato degli enti che forniscono dati statistici sul turismo) sono fondamentali per orientare la gestione di un'impresa. La sigla SWOT, in inglese, sta per Strengths (punti di forza), weaknesses (debolezze), opportunities e threats (minacce)."
+    },
+    
+    {"title": "Flussi turistici",
+     "body" : "Negli ultimi anni c'è stato un forte aumento di turisti russi, indiani, brasiliani e cinesi, in quanto in questi Paesi il reddito pro capite è aumentato fortemente. È importante anche il turismo di prossimità, proveniente dalla Francia, dalla Svizzera e dall'Austria, perché questi turisti possono raggiungere il nostro Paese facilmente e con diversi mezzi (auto, treno, aereo). Il turismo in Italia, dati del 2019, è in equilibrio tra presenze dei residenti (48%) e non residenti (52%)."
       
     },
     
+    {
+      "title": "Motivazioni del viaggio",
+      "body": "Per le vacanze in Italia, le motivazioni principali sono la bellezza del paesaggio, la possibilità di rilassarsi, i fattori relazionali (ritrovarsi tra amici e parenti), la visita al Papa. Per gli italiani che si recano all'estero è fondamentale conoscere posti nuovi, ammirare il patrimonio artistico della destinazione, divertirsi. Meno importanti sono le motivazioni legate alla natura o alla cucina (essendo l'Italia il Paese con la maggiore tradizione enogastronomica, gli italiani non si adattano all'enogastronomia di altri Paesi facilmente). Il prezzo è sicuramente una delle motivazioni principali."
+      
+    },
     
     {
-      "title" : "text and font",
+      "title": "Turismo in Italia 2019",
+      "body" : "<a href='https://www.corriere.it/cronache/19_agosto_18/03-interni-sopcorriere-web-sezioni-21e68bd8-c1f5-11e9-b61c-c8d9a9699826.shtml'><img src='https://www.corriere.it/methode_image/2019/08/19/Interni/Foto%20Interni%20-%20Trattate/turismo%20grafico-k03B-U31301899356699KJF-656x492@Corriere-Web-Sezioni.JPG'></a>"
       
-      "body" : """
-To add a *text to an *image after you created an image:
-<br>
->>> im = img.new("RGBA", (600,400), "yellow")
-<br>
-You create a ^ImageDraw.Draw object to wich you pass the ^im object you created and on wich you draw:
-<br>
->>> d = ImageDraw.Draw(im)
-<br><br>
-Now you are ready to add a text to the ^d object, but you can define the *size and *family of the text, using the ^ImageFont *class (that you need to import from PIL) together with the method ^truetype:
-<br>
->>> font = ImageFont.truetype("Arial 20")
-<br><br>
-Now, you can finally add this font to the ^font ^argument when you add the text like this:
->>> d.text((10,10), "text to show", (255,255,255), font=font)
-      """
+    },
+    
+    {
+      "title": "Statistiche sulla Russia dell'Enit",
+      "body" : """<a href='http://www.enit.it/en/studi/focus-paese/category/6-rapporti-enitmae-rapporti-enitmae-europa.html?download=2549:russia&start=20'>Link al file pdf</a><br>
+<a href="https://www.giuliogargiullo.it/turisti-russi/">Articolo sulle statistiche sui turisti russi</a>"""
       
     }
     
-
-    # {"title" : "", "body" : ""},
+    
+    
+    
     
 
   ]
